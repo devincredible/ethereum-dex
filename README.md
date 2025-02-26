@@ -1,8 +1,6 @@
-`#Ethereum`
+# Ethereum DEX
 
-# mTC DExchange
-
-This is a Decentralized Exchange built with smart contracts powered by Ethereum. It basically consists in a platform where the user can exchange an ERC-20 token called mTC Token by Ether in a secure and descentralized manner.
+A decentralized exchange built with smart contracts powered by Ethereum, enabling secure P2P trading between Ether and ERC-20 tokens with an order book system and real-time price charts.
 
 ## Table of Contents
 
@@ -18,10 +16,8 @@ These instructions will get you a copy of the project up and running on your loc
 
 First, you will need to `clone` or `fork` the repository into your Github account:
 
-<img src="https://docs.github.com/assets/images/help/repository/fork_button.jpg" alt="Fork on GitHub" width='450'>
-
 ```
-$ git clone https://github.com/miquelTC/decentralized-exchange.git
+$ git clone https://github.com/devincredible/ethereum-dex.git
 ```
 
 ### Installing
@@ -80,6 +76,7 @@ $ truffle exec scripts/seed-exchange.js
 First of all, it is required to install Metamask wallet as a browser extension: https://metamask.io/
 
 Then you should configure Metamask to connect to your local blockchain run by Ganache. This requires the following:
+
 - Open Metamask
 - Open the Network Configuration panel
 - Open Custom RPC
@@ -117,7 +114,6 @@ Finally you can run the following command to generate the build artifacts of you
 npm run build
 ```
 
-
 ### Technology stack
 
 - `Solidity`
@@ -130,28 +126,24 @@ npm run build
 
 ## The Project
 
-This project consists in a decentralized exchange to allow users making p2p trades between Ether and a ERC-20 token called mTC Token. It includes:
+This project consists of a decentralized exchange to allow users to make P2P trades between Ether and ERC-20 tokens. It includes:
 
-- A smart contract which contains an ERC-20 token called mTC Token
-- A smart contract which contains a decentralized exchange and all the logic to submit orders, execute trades...
-- Tests built with JavaScripts to ensure smart contracts are accomplishing the expected functionalities
-- A React.js front-end application as a user interface
+- Smart contracts for ERC-20 token implementation
+- A decentralized exchange contract with comprehensive order and trade execution logic
+- JavaScript-based test suite for contract validation
+- React.js frontend application for user interaction
 
 ### Project architecture
-
-<img src="./img/architecture.PNG" alt="architecture">
 
 The user can access the application via web-browser, and he must have the Metamask wallet installed. This interface, built with React.js, relies on the web3.js library to communicate with the smart contracts through Metamask. This means that the data reflected on the front-end application is fetched from the Ethereum blockchain. Each action performed by the user (put a a buy order, cancel order, execute a trade...) creates a transaction on Ethereum, which will require Metamask confirmation and pay an small fee, and this transaction will permanently modify the state of the Token and Exchange smart contracts.
 
 ### Exchange features
 
-<img src="./img/layout.PNG" alt="layout">
-
 There are several sections which have different functionalities for the end user:
 
 #### Balance
 
-Here is where the user can deposit / withdraw Ether or mTC Token in the Exchange. It also reflects the balances, not only exchange balances but also wallet ballances,
+Here is where the user can deposit / withdraw Ether or ERC-20 tokens in the Exchange. It also reflects the balances, not only exchange balances but also wallet balances.
 
 #### New Order
 
@@ -163,7 +155,7 @@ Here the user can see all the orders placed. Also, the user can execute the trad
 
 #### Price Chart
 
-The Price Chart reflects the price of the mTC Token via candlestick chart.
+The Price Chart reflects the token price via candlestick chart.
 
 #### My Transactions
 
